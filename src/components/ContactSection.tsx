@@ -1,14 +1,17 @@
 import { useState, FormEvent } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const headerRef = useScrollReveal<HTMLDivElement>();
+  const infoRef = useScrollReveal<HTMLDivElement>();
+  const formRef = useScrollReveal<HTMLFormElement>();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real app, send data to backend
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -18,14 +21,14 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section-padding">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="reveal text-center mb-16">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">{t("contact_title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">{t("contact_subtitle")}</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {/* Info */}
-          <div className="space-y-6">
+          <div ref={infoRef} className="reveal-left space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <Phone className="w-5 h-5 text-primary" />
@@ -40,7 +43,7 @@ const ContactSection = () => {
                 <Mail className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-heading font-semibold text-foreground">Email</p>
+                <p className="font-heading font-semibold text-foreground">{t("contact_label_email")}</p>
                 <a href="mailto:info@taxijerez.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">info@taxijerez.com</a>
               </div>
             </div>
@@ -56,7 +59,7 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-2 space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="reveal-right lg:col-span-2 space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
               <input type="text" required placeholder={t("contact_name")} className={inputClass} />
               <input type="tel" required placeholder={t("contact_phone")} className={inputClass} />
@@ -77,7 +80,7 @@ const ContactSection = () => {
             <button
               type="submit"
               disabled={submitted}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-heading font-bold hover:brightness-110 transition-all disabled:opacity-60"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-heading font-bold hover:brightness-110 hover:shadow-lg transition-all disabled:opacity-60"
             >
               <Send className="w-4 h-4" />
               {submitted ? "✓" : t("contact_send")}
