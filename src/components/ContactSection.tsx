@@ -31,7 +31,7 @@ const ContactSection = () => {
                 <Phone className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-heading font-semibold text-foreground">Teléfono</p>
+                <p className="font-heading font-semibold text-foreground">{t("contact_label_phone")}</p>
                 <a href="tel:+34600000000" className="text-muted-foreground text-sm hover:text-primary transition-colors">+34 600 000 000</a>
               </div>
             </div>
@@ -49,7 +49,7 @@ const ContactSection = () => {
                 <MapPin className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-heading font-semibold text-foreground">Ubicación</p>
+                <p className="font-heading font-semibold text-foreground">{t("contact_label_location")}</p>
                 <p className="text-muted-foreground text-sm">Jerez de la Frontera, Cádiz</p>
               </div>
             </div>
