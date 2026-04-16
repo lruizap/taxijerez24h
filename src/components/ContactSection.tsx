@@ -19,7 +19,7 @@ const ContactSection = () => {
   const inputClass = "w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm";
 
   return (
-    <section id="contact" className="section-padding bg-section-alt">
+    <section id="contact" className="section-padding">
       <div className="container mx-auto">
         <div ref={headerRef} className="reveal text-center mb-16">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">{t("contact_title")}</h2>
