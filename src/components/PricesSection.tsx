@@ -1,71 +1,137 @@
+import { useMemo, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Search, Building2, Plane } from "lucide-react";
 
-const prices = [
-  ["Jerez - Cádiz", "60 €"],
-  ["Aeropuerto Jerez - Cádiz", "75 €"],
-  ["Jerez - Sevilla", "150 €"],
-  ["Aeropuerto Jerez - Sevilla", "160 €"],
-  ["Jerez - Málaga", "300 €"],
-  ["Aeropuerto Jerez - Málaga", "320 €"],
-  ["Jerez - El Puerto Sta. María", "30 €"],
-  ["Aeropuerto Jerez - El Puerto Sta. María", "55 €"],
-  ["Jerez - Rota", "50 €"],
-  ["Aeropuerto Jerez - Rota", "75 €"],
-  ["Jerez - Chipiona", "50 €"],
-  ["Aeropuerto Jerez - Chipiona", "75 €"],
-  ["Jerez - Chiclana", "60 €"],
-  ["Jerez - Sancti Petri", "80 €"],
-  ["Aeropuerto Jerez - Sancti Petri", "110 €"],
-  ["Jerez - Conil", "90 €"],
-  ["Aeropuerto Jerez - Conil", "120 €"],
-  ["Jerez - San Fernando", "60 €"],
-  ["Aeropuerto Jerez - San Fernando", "75 €"],
-  ["Jerez - Tarifa", "170 €"],
-  ["Aeropuerto Jerez - Tarifa", "190 €"],
-  ["Jerez - Algeciras", "130 €"],
-  ["Aeropuerto Jerez - Algeciras", "150 €"],
-  ["Jerez - Sotogrande", "145 €"],
-  ["Aeropuerto Jerez - Sotogrande", "165 €"],
-  ["Jerez - Arcos", "50 €"],
-  ["Aeropuerto Jerez - Arcos", "70 €"],
-  ["Jerez - Sanlúcar", "50 €"],
-  ["Aeropuerto Jerez - Sanlúcar", "70 €"],
-  ["Jerez - Zahara de los Atunes", "140 €"],
-  ["Aeropuerto Jerez - Zahara de los Atunes", "180 €"],
-  ["Aeropuerto Jerez - Costa Ballena", "75 €"],
-  ["Jerez - Costa del Puerto Sta. María", "35 €"],
-  ["Aeropuerto Jerez - Costa del Puerto Sta. María", "60 €"],
+type Route = { destination: string; price: string };
+
+const cityRoutes: Route[] = [
+  { destination: "Cádiz", price: "60 €" },
+  { destination: "Sevilla", price: "150 €" },
+  { destination: "Málaga", price: "300 €" },
+  { destination: "El Puerto Sta. María", price: "30 €" },
+  { destination: "Costa del Puerto Sta. María", price: "35 €" },
+  { destination: "Rota", price: "50 €" },
+  { destination: "Chipiona", price: "50 €" },
+  { destination: "Sanlúcar", price: "50 €" },
+  { destination: "Arcos", price: "50 €" },
+  { destination: "Chiclana", price: "60 €" },
+  { destination: "San Fernando", price: "60 €" },
+  { destination: "Sancti Petri", price: "80 €" },
+  { destination: "Conil", price: "90 €" },
+  { destination: "Algeciras", price: "130 €" },
+  { destination: "Zahara de los Atunes", price: "140 €" },
+  { destination: "Sotogrande", price: "145 €" },
+  { destination: "Tarifa", price: "170 €" },
+];
+
+const airportRoutes: Route[] = [
+  { destination: "Cádiz", price: "75 €" },
+  { destination: "Sevilla", price: "160 €" },
+  { destination: "Málaga", price: "320 €" },
+  { destination: "El Puerto Sta. María", price: "55 €" },
+  { destination: "Costa del Puerto Sta. María", price: "60 €" },
+  { destination: "Costa Ballena", price: "75 €" },
+  { destination: "Rota", price: "75 €" },
+  { destination: "Chipiona", price: "75 €" },
+  { destination: "Sanlúcar", price: "70 €" },
+  { destination: "Arcos", price: "70 €" },
+  { destination: "San Fernando", price: "75 €" },
+  { destination: "Sancti Petri", price: "110 €" },
+  { destination: "Conil", price: "120 €" },
+  { destination: "Algeciras", price: "150 €" },
+  { destination: "Sotogrande", price: "165 €" },
+  { destination: "Zahara de los Atunes", price: "180 €" },
+  { destination: "Tarifa", price: "190 €" },
 ];
 
 const PricesSection = () => {
   const { t } = useLanguage();
+  const [tab, setTab] = useState<"city" | "airport">("city");
+  const [query, setQuery] = useState("");
+  const headerRef = useScrollReveal<HTMLDivElement>();
+  const cardRef = useScrollReveal<HTMLDivElement>();
+
+  const list = tab === "city" ? cityRoutes : airportRoutes;
+  const filtered = useMemo(
+    () => list.filter((r) => r.destination.toLowerCase().includes(query.toLowerCase())),
+    [list, query]
+  );
 
   return (
     <section id="prices" className="section-padding bg-section-alt">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="reveal text-center mb-12">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">{t("prices_title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">{t("prices_subtitle")}</p>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-card rounded-2xl shadow-sm border overflow-hidden">
-          <div className="grid grid-cols-[1fr_auto] bg-primary text-primary-foreground">
-            <div className="px-6 py-3 font-heading font-semibold text-sm">{t("prices_route")}</div>
-            <div className="px-6 py-3 font-heading font-semibold text-sm text-right">{t("prices_price")}</div>
+        <div ref={cardRef} className="reveal-scale max-w-3xl mx-auto">
+          {/* Tabs */}
+          <div className="grid grid-cols-2 gap-2 mb-4 p-1.5 bg-card border rounded-xl shadow-sm">
+            <button
+              onClick={() => setTab("city")}
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-heading font-semibold text-sm transition-all ${
+                tab === "city"
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              <Building2 className="w-4 h-4" />
+              <span className="hidden sm:inline">{t("prices_cat_city")}</span>
+              <span className="sm:hidden">Jerez</span>
+            </button>
+            <button
+              onClick={() => setTab("airport")}
+              className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-heading font-semibold text-sm transition-all ${
+                tab === "airport"
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+            >
+              <Plane className="w-4 h-4" />
+              <span className="hidden sm:inline">{t("prices_cat_airport")}</span>
+              <span className="sm:hidden">Aeropuerto</span>
+            </button>
           </div>
-          <div className="max-h-[500px] overflow-y-auto">
-            {prices.map(([route, price], i) => (
-              <div key={i} className={`grid grid-cols-[1fr_auto] ${i % 2 === 0 ? "bg-card" : "bg-muted/30"} hover:bg-primary/5 transition-colors`}>
-                <div className="px-6 py-3 text-sm text-foreground">{route}</div>
-                <div className="px-6 py-3 text-sm font-semibold text-secondary text-right">{price}</div>
-              </div>
-            ))}
+
+          {/* Search */}
+          <div className="relative mb-4">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t("prices_search")}
+              className="w-full pl-10 pr-4 py-3 bg-card border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+            />
+          </div>
+
+          {/* Table */}
+          <div className="bg-card rounded-2xl shadow-sm border overflow-hidden">
+            <div className="grid grid-cols-[1fr_auto] bg-primary text-primary-foreground">
+              <div className="px-6 py-3.5 font-heading font-semibold text-sm">{t("prices_route")}</div>
+              <div className="px-6 py-3.5 font-heading font-semibold text-sm text-right">{t("prices_price")}</div>
+            </div>
+            <div className="max-h-[460px] overflow-y-auto">
+              {filtered.length === 0 ? (
+                <div className="px-6 py-10 text-center text-muted-foreground text-sm">{t("prices_no_results")}</div>
+              ) : (
+                filtered.map((r, i) => (
+                  <div
+                    key={`${tab}-${r.destination}`}
+                    className={`grid grid-cols-[1fr_auto] ${i % 2 === 0 ? "bg-card" : "bg-muted/30"} hover:bg-primary/5 transition-colors`}
+                  >
+                    <div className="px-6 py-3.5 text-sm text-foreground">{r.destination}</div>
+                    <div className="px-6 py-3.5 text-sm font-bold text-secondary text-right tabular-nums">{r.price}</div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
 
-        <p className="text-center mt-8 text-muted-foreground font-medium">
-          {t("prices_not_listed")}
-        </p>
+        <p className="text-center mt-8 text-muted-foreground font-medium">{t("prices_not_listed")}</p>
       </div>
     </section>
   );
