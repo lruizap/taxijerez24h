@@ -53,10 +53,12 @@ const PricesSection = () => {
   const cardRef = useScrollReveal<HTMLDivElement>();
 
   const list = tab === "city" ? cityRoutes : airportRoutes;
-  const filtered = useMemo(
-    () => list.filter((r) => r.destination.toLowerCase().includes(query.toLowerCase())),
-    [list, query]
-  );
+  const filtered = useMemo(() => {
+    const parsePrice = (p: string) => parseInt(p.replace(/[^\d]/g, ""), 10) || 0;
+    return [...list]
+      .filter((r) => r.destination.toLowerCase().includes(query.toLowerCase()))
+      .sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+  }, [list, query]);
 
   return (
     <section id="prices" className="section-padding bg-section-alt">
