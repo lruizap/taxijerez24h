@@ -56,13 +56,13 @@ const Navbar = () => {
           <div className="relative">
             <img
               src="/images/logo-jerez.png"
-              alt="Taxi Jerez"
-              className={`w-auto transition-all duration-500 group-hover:scale-110 ${scrolled ? "h-8" : "h-9"}`}
+              alt="Taxi Jerez 24H"
+              className={`w-auto rounded-lg transition-all duration-500 group-hover:scale-110 ${scrolled ? "h-9" : "h-10"}`}
             />
           </div>
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-heading font-bold text-sm text-primary">Taxi Jerez</span>
-            <span className="text-[10px] text-muted-foreground -mt-0.5">7 plazas · Jerez de la Frontera</span>
+            <span className="font-heading font-bold text-sm text-primary">Taxi Jerez 24H</span>
+            <span className="text-[10px] text-muted-foreground -mt-0.5">Jerez de la Frontera · 24 horas</span>
           </div>
         </a>
 

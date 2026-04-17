@@ -35,7 +35,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-heading font-semibold text-foreground">{t("contact_label_phone")}</p>
-                <a href="tel:+34600000000" className="text-muted-foreground text-sm hover:text-primary transition-colors">+34 600 000 000</a>
+                <a href="tel:+34691312782" className="text-muted-foreground text-sm hover:text-primary transition-colors">+34 691 31 27 82</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -44,7 +44,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-heading font-semibold text-foreground">{t("contact_label_email")}</p>
-                <a href="mailto:info@taxijerez.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">info@taxijerez.com</a>
+                <a href="mailto:Taxijerez24h@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors break-all">Taxijerez24h@gmail.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
