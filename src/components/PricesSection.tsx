@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Search, Building2, Plane } from "lucide-react";
+import { Search, Building2, Plane, Calculator, AlertCircle } from "lucide-react";
 
 type Route = { destination: string; price: string };
 
@@ -49,8 +49,17 @@ const PricesSection = () => {
   const { t } = useLanguage();
   const [tab, setTab] = useState<"city" | "airport">("city");
   const [query, setQuery] = useState("");
+  const [km, setKm] = useState("");
   const headerRef = useScrollReveal<HTMLDivElement>();
   const cardRef = useScrollReveal<HTMLDivElement>();
+  const calcRef = useScrollReveal<HTMLDivElement>();
+  const noticeRef = useScrollReveal<HTMLDivElement>();
+
+  const estimatedPrice = useMemo(() => {
+    const n = parseFloat(km.replace(",", "."));
+    if (!n || n <= 0) return null;
+    return (n * 2 * 0.82).toFixed(2);
+  }, [km]);
 
   const list = tab === "city" ? cityRoutes : airportRoutes;
   const filtered = useMemo(() => {
