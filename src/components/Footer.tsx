@@ -20,20 +20,20 @@ const Footer = () => {
       <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-4 py-14">
-        <div className="grid md:grid-cols-3 gap-10 mb-10">
+        <div className="grid md:grid-cols-3 gap-10 mb-10 text-center">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/images/logo-jerez.png" alt="Taxi Jerez 24H" className="h-12 w-auto rounded-lg bg-background/95 p-1" />
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center gap-3 mb-4">
+              <img src="/images/logo-jerez.png" alt="Taxi Jerez 24H" className="h-14 w-auto rounded-lg bg-background/95 p-1" />
               <div>
                 <p className="font-heading font-extrabold text-lg">Taxi Jerez 24H</p>
                 <p className="text-primary-foreground/70 text-xs">Jerez de la Frontera</p>
               </div>
             </div>
-            <p className="text-primary-foreground/75 text-sm leading-relaxed">
+            <p className="text-primary-foreground/75 text-sm leading-relaxed max-w-xs">
               {t("footer_available")}
             </p>
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" /> 24/7
               </span>
@@ -47,11 +47,11 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-secondary mb-4">
               {t("nav_contact")}
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm inline-flex flex-col items-start">
               <li>
                 <a href="tel:+34691312782" className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group">
                   <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           {/* Quick links */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="font-heading font-bold text-sm uppercase tracking-wider text-secondary mb-4">
               {t("nav_services")}
             </h3>
@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-primary-foreground/15 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="pt-6 border-t border-primary-foreground/15 flex flex-col items-center justify-center gap-2 text-center">
           <p className="text-primary-foreground/60 text-xs">
             © {new Date().getFullYear()} Taxi Jerez 24H. {t("footer_rights")}
           </p>
