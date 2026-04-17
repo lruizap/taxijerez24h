@@ -11,7 +11,7 @@ const HeroSection = () => {
       
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in-up">
-          <img src="/images/logo-jerez.png" alt="Taxi Jerez" className="w-24 h-auto mx-auto mb-8 drop-shadow-2xl" />
+          <img src="/images/logo-jerez.png" alt="Taxi Jerez 24H" className="w-28 h-auto mx-auto mb-8 drop-shadow-2xl rounded-2xl" />
           <h1 className="font-heading font-extrabold text-4xl md:text-6xl lg:text-7xl text-primary-foreground mb-6 leading-tight">
             {t("hero_title")}
           </h1>

@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
 
   return (
     <a
-      href="https://wa.me/34600000000"
+      href="https://wa.me/34691312782"
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t("whatsapp_tooltip")}

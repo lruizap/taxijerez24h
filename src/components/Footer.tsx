@@ -8,14 +8,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src="/images/logo-jerez.png" alt="Taxi Jerez" className="h-10 w-auto" />
+            <img src="/images/logo-jerez.png" alt="Taxi Jerez 24H" className="h-10 w-auto" />
             <div>
-              <p className="font-heading font-bold">Taxi Jerez</p>
+              <p className="font-heading font-bold">Taxi Jerez 24H</p>
               <p className="text-primary-foreground/70 text-xs">{t("footer_available")}</p>
             </div>
           </div>
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Taxi Jerez. {t("footer_rights")}
+            © {new Date().getFullYear()} Taxi Jerez 24H. {t("footer_rights")}
           </p>
         </div>
       </div>
