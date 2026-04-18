@@ -22,11 +22,12 @@ const CalculatorFab = () => {
       onClick={goToCalc}
       aria-label={t("calc_title")}
       title={t("calc_title")}
-      className={`fixed bottom-6 left-6 z-40 group transition-all duration-300 animate-float
+      className={`fixed bottom-6 left-6 z-40 group animate-float
         w-14 h-14 sm:w-auto sm:h-auto sm:py-3 sm:pl-4 sm:pr-5
         flex items-center justify-center sm:gap-2
         rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-110
-        ${visible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"}`}
+        transition-[opacity,box-shadow] duration-300
+        ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
       <Calculator className="w-6 h-6 sm:w-5 sm:h-5" />
       <span className="font-heading font-semibold text-sm hidden sm:inline">{t("calc_title")}</span>
