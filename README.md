@@ -32,15 +32,15 @@ Ofrecemos traslados al aeropuerto, viajes interurbanos, vehículos de **7 y 9 pl
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="./assets/jerez/catedral.jpg" alt="Catedral de Jerez" width="100%"><br>
+      <img src="public/catedral.webp" alt="Catedral de Jerez" width="100%"><br>
       <sub><b>Catedral de Jerez</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="./assets/jerez/alcazar.jpg" alt="Alcázar de Jerez" width="100%"><br>
+      <img src="public/alcazar.webp" alt="Alcázar de Jerez" width="100%"><br>
       <sub><b>Alcázar de Jerez</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="./assets/jerez/bodegas.jpg" alt="Bodegas Tío Pepe" width="100%"><br>
+      <img src="public/bodega.jpg" alt="Bodegas" width="100%"><br>
       <sub><b>Bodegas centenarias</b></sub>
     </td>
   </tr>
