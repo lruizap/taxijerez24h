@@ -32,15 +32,15 @@ Ofrecemos traslados al aeropuerto, viajes interurbanos, vehículos de **7 y 9 pl
 <table>
   <tr>
     <td align="center" width="33%">
-      <img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg/640px-Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg" alt="Catedral de Jerez](https://lh3.googleusercontent.com/p/AF1QipMGhW3IRF8yioMzNob58OmYrbB5Q3ElIBk4ztO6=s1360-w1360-h1020-rw)" width="100%" /><br>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg/640px-Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg" alt="Catedral de Jerez" width="100%" /><br>
       <sub><b>Catedral de Jerez</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg/640px-Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg](https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSWzcFpRCsVsefkimZ3PAKtNF02Q3j-z4q07Aq3-sM1EfXzJ8dm808Mr497k7QjCVu-_l5zJDajWk9J6QvBACuHxxTDalZfSdMrykgTJ9v_qvhrBPdmxUNqDCJhnQzI-JGGY8=s1360-w1360-h1020-rw)" alt="Alcázar de Jerez" width="100%" /><br>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg/640px-Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg" alt="Alcázar de Jerez" width="100%" /><br>
       <sub><b>Alcázar de Jerez</b></sub>
     </td>
     <td align="center" width="33%">
-      <img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bodegas_Tio_Pepe.jpg/640px-Bodegas_Tio_Pepe.jpg](https://enoturismospain.com/imagen/bodega/4/124/bodega-fundador-mezquita.jpg)" alt="Bodegas Tío Pepe" width="100%" /><br>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bodegas_Tio_Pepe.jpg/640px-Bodegas_Tio_Pepe.jpg" alt="Bodegas Tío Pepe" width="100%" /><br>
       <sub><b>Bodegas centenarias</b></sub>
     </td>
   </tr>
