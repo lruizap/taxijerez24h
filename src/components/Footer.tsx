@@ -61,11 +61,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:Taxijerez24h@gmail.com" className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group break-all">
+                <a href="mailto:frantrujillano@taxijerez24h.com" className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group break-all">
                   <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </span>
-                  Taxijerez24h@gmail.com
+                  frantrujillano@taxijerez24h.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-primary-foreground/85">
