@@ -22,7 +22,7 @@ const CalculatorFab = () => {
       onClick={goToCalc}
       aria-label={t("calc_title")}
       title={t("calc_title")}
-      className={`fixed right-6 z-40 group transition-all duration-300 bottom-24 sm:bottom-6 sm:right-[5.5rem]
+      className={`fixed bottom-6 left-6 z-40 group transition-all duration-300 animate-float
         w-14 h-14 sm:w-auto sm:h-auto sm:py-3 sm:pl-4 sm:pr-5
         flex items-center justify-center sm:gap-2
         rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl hover:scale-110
