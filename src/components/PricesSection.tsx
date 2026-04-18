@@ -72,9 +72,62 @@ const PricesSection = () => {
   return (
     <section id="prices" className="section-padding bg-section-alt">
       <div className="container mx-auto">
-        <div ref={headerRef} className="reveal text-center mb-12">
+        <div ref={headerRef} className="reveal text-center mb-8">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mb-4">{t("prices_title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">{t("prices_subtitle")}</p>
+        </div>
+
+        {/* Disclaimer (below title) */}
+        <div ref={noticeRef} className="reveal max-w-3xl mx-auto mb-8">
+          <div className="flex gap-3 p-4 rounded-xl bg-secondary/10 border border-secondary/30">
+            <AlertCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-heading font-semibold text-sm text-foreground mb-1">{t("prices_disclaimer_title")}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t("prices_disclaimer")}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Calculator (above prices list) */}
+        <div ref={calcRef} id="calculator" className="reveal max-w-3xl mx-auto mb-10 scroll-mt-24">
+          <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
+            <div className="bg-gradient-to-r from-primary to-primary/85 px-6 py-4 flex items-center gap-3 text-primary-foreground">
+              <div className="w-10 h-10 rounded-lg bg-primary-foreground/15 flex items-center justify-center">
+                <Calculator className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-lg leading-tight">{t("calc_title")}</h3>
+                <p className="text-xs text-primary-foreground/80">{t("calc_subtitle")}</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <label className="block text-sm font-heading font-semibold text-foreground mb-2">
+                {t("calc_label_km")}
+              </label>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <div className="relative flex-1">
+                  <input
+                    type="number"
+                    inputMode="decimal"
+                    min="0"
+                    step="0.1"
+                    value={km}
+                    onChange={(e) => setKm(e.target.value)}
+                    placeholder={t("calc_placeholder")}
+                    className="w-full pl-4 pr-14 py-3 bg-background border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                  />
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-muted-foreground font-medium">km</span>
+                </div>
+                <div className="flex-1 sm:flex-initial sm:min-w-[200px] flex items-center justify-between gap-3 px-5 py-3 rounded-xl bg-secondary/10 border border-secondary/30">
+                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("calc_result")}</span>
+                  <span className="font-heading font-extrabold text-2xl text-secondary tabular-nums">
+                    {estimatedPrice ? `${estimatedPrice} €` : "—"}
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-xs text-muted-foreground">{t("calc_note")}</p>
+            </div>
+          </div>
         </div>
 
         <div ref={cardRef} className="reveal-scale max-w-3xl mx-auto">
@@ -138,61 +191,6 @@ const PricesSection = () => {
                   </div>
                 ))
               )}
-            </div>
-          </div>
-        </div>
-
-        {/* Calculator */}
-        <div ref={calcRef} className="reveal max-w-3xl mx-auto mt-10">
-          <div className="bg-card rounded-2xl border shadow-sm overflow-hidden">
-            <div className="bg-gradient-to-r from-primary to-primary/85 px-6 py-4 flex items-center gap-3 text-primary-foreground">
-              <div className="w-10 h-10 rounded-lg bg-primary-foreground/15 flex items-center justify-center">
-                <Calculator className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="font-heading font-bold text-lg leading-tight">{t("calc_title")}</h3>
-                <p className="text-xs text-primary-foreground/80">{t("calc_subtitle")}</p>
-              </div>
-            </div>
-            <div className="p-6">
-              <label className="block text-sm font-heading font-semibold text-foreground mb-2">
-                {t("calc_label_km")}
-              </label>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="relative flex-1">
-                  <input
-                    type="number"
-                    inputMode="decimal"
-                    min="0"
-                    step="0.1"
-                    value={km}
-                    onChange={(e) => setKm(e.target.value)}
-                    placeholder={t("calc_placeholder")}
-                    className="w-full pl-4 pr-14 py-3 bg-background border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                  />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-muted-foreground font-medium">km</span>
-                </div>
-                <div className="flex-1 sm:flex-initial sm:min-w-[200px] flex items-center justify-between gap-3 px-5 py-3 rounded-xl bg-secondary/10 border border-secondary/30">
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{t("calc_result")}</span>
-                  <span className="font-heading font-extrabold text-2xl text-secondary tabular-nums">
-                    {estimatedPrice ? `${estimatedPrice} €` : "—"}
-                  </span>
-                </div>
-              </div>
-              <p className="mt-4 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground/80">{t("calc_formula")}</span> · {t("calc_note")}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Disclaimer */}
-        <div ref={noticeRef} className="reveal max-w-3xl mx-auto mt-6">
-          <div className="flex gap-3 p-4 rounded-xl bg-secondary/10 border border-secondary/30">
-            <AlertCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-heading font-semibold text-sm text-foreground mb-1">{t("prices_disclaimer_title")}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t("prices_disclaimer")}</p>
             </div>
           </div>
         </div>
