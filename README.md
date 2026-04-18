@@ -1,34 +1,165 @@
-# Taxi Jerez – Sitio Web
+<div align="center">
 
-![Jerez de la Frontera](./public/img/jerez1.jpg)
+<img src="public/favicon.png" alt="Taxi Jerez 24H" width="120" />
 
-Bienvenido al sitio web de **Taxi Jerez**, un servicio profesional de transporte en Jerez de la Frontera y sus alrededores. Esta aplicación web está desarrollada con **Next.js** y **TypeScript**, utiliza **Tailwind CSS** para estilos y ofrece una experiencia centrada en dispositivos móviles.
+# 🚖 Taxi Jerez 24H
 
-## ✨ Características principales
+### *Tu taxi de confianza en Jerez de la Frontera · 24 horas, 7 días a la semana*
 
-- **Diseño responsive** y accesible, optimizado para móviles y tablets.
-- **Portada con imagen de la flota**: la fotografía de la flota de taxis se muestra como fondo en la sección inicial.
-- **Sección de flota** con diferentes tipos de vehículos (4, 7, 9 plazas y adaptado) y una imagen destacada de Jerez (`jerez1.jpg`).
-- **Servicios personalizados**: traslados al aeropuerto de Jerez, estaciones, hoteles y eventos.
-- **Tarifas fijas** para rutas comunes (Jerez → Cádiz, Sanlúcar, Novo Sancti Petri, El Puerto de Santa María).
-- **Formulario de reserva** con validación, preparado para Netlify o para integrarse con un servicio de correo.
-- **Botón flotante de WhatsApp** en color verde para contacto rápido.
-- **Sección de Preguntas Frecuentes** con desplegables.
-- **Información de contacto** y apartado “Sobre nosotros”.
-- **Configurado para SEO** (etiquetas `title` y `meta description`).
+<br>
 
-## 🖼️ Uso de imágenes
+[![Web](https://img.shields.io/badge/🌐_Web-taxijerez24h.lovable.app-1d4ed8?style=for-the-badge)](https://taxijerez24h.lovable.app)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-+34_691_31_27_82-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/34691312782)
+[![Email](https://img.shields.io/badge/Email-Taxijerez24h@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Taxijerez24h@gmail.com)
 
-Este proyecto incluye dos imágenes en la carpeta `public/img/`:
+<br>
 
-- `fleet.jpg` – Se utiliza como fondo en la sección de héroe.
-- `jerez1.jpg` – Se muestra al inicio de la sección **Flota** y también en este README (arriba).
+<img src="public/ChatGPT%20Image%2017%20abr%202026%2C%2020_19_53.png" alt="Taxi Jerez 24H — Banner principal" width="100%" />
 
-Puedes sustituir estas imágenes por otras propias conservando los mismos nombres de archivo para mantener el diseño.
+</div>
 
-## 🚀 Instalación y uso
+---
 
-1. **Clona este repositorio**:
-   ```bash
-   git clone https://github.com/tu_usuario/nombre_del_repositorio.git
-   cd nombre_del_repositorio
+## ✨ Sobre el proyecto
+
+**Taxi Jerez 24H** es la web oficial de un servicio profesional de taxi en **Jerez de la Frontera**, disponible las **24 horas del día**.
+Ofrecemos traslados al aeropuerto, viajes interurbanos, vehículos de **7 y 9 plazas** y **taxis adaptados** para personas con movilidad reducida.
+
+> *"Viaja cómodo, seguro y a precio cerrado por toda Andalucía."*
+
+<br>
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg/640px-Catedral_de_Jerez_de_la_Frontera_2025_-_03.jpg" alt="Catedral de Jerez" width="100%" /><br>
+      <sub><b>Catedral de Jerez</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg/640px-Alc%C3%A1zar_de_Jerez_de_la_Frontera_-_Vista_general.jpg" alt="Alcázar de Jerez" width="100%" /><br>
+      <sub><b>Alcázar de Jerez</b></sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bodegas_Tio_Pepe.jpg/640px-Bodegas_Tio_Pepe.jpg" alt="Bodegas Tío Pepe" width="100%" /><br>
+      <sub><b>Bodegas centenarias</b></sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🚗 Servicios
+
+| Servicio | Descripción |
+|---|---|
+| ✈️ **Traslados al aeropuerto** | Jerez · Sevilla · Málaga, con la máxima puntualidad |
+| 🏙️ **Servicios urbanos** | Desplazamientos rápidos por Jerez de la Frontera |
+| 🛣️ **Interurbanos** | Cádiz, Sevilla, Málaga, Tarifa… ¡incluso París si hace falta! |
+| 👨‍👩‍👧‍👦 **7 plazas** | Monovolumen ideal para familias y grupos medianos |
+| 👥 **9 plazas** | Vehículos para grupos grandes, eventos y excursiones |
+| ♿ **Taxi adaptado** | Vehículos accesibles para personas con movilidad reducida |
+
+---
+
+## 🌟 Características de la web
+
+- 🎨 **Diseño moderno y responsive** — perfecto en móvil, tablet y desktop
+- 🌍 **Multiidioma** — Español 🇪🇸 · English 🇬🇧 · Deutsch 🇩🇪 · Français 🇫🇷 · 中文 🇨🇳
+- 🧮 **Calculadora de precio** — estimación instantánea por kilómetros
+- 💬 **Botones flotantes** — WhatsApp y calculadora siempre accesibles
+- ✨ **Animaciones al hacer scroll** — experiencia fluida y elegante
+- 🔍 **SEO optimizado** — JSON-LD, sitemap, hreflang y Open Graph completos
+- 📞 **Contacto directo** — formulario de reserva, llamada y WhatsApp en un clic
+
+---
+
+## 🛠️ Tecnologías
+
+<div align="center">
+
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000?style=flat-square&logo=shadcnui&logoColor=white)
+![Lovable](https://img.shields.io/badge/Built_with-Lovable-FF6B9D?style=flat-square)
+
+</div>
+
+---
+
+## 🚀 Empezar en local
+
+```bash
+# 1. Clona el repositorio
+git clone <YOUR_GIT_URL>
+cd <YOUR_PROJECT_NAME>
+
+# 2. Instala las dependencias
+npm install
+
+# 3. Arranca el servidor de desarrollo
+npm run dev
+```
+
+La web estará disponible en `http://localhost:5173` ⚡
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+src/
+├── assets/            # Imágenes y SVG locales
+├── components/        # Componentes React (Hero, Servicios, Tarifas, Footer…)
+│   └── ui/            # Componentes base de shadcn/ui
+├── hooks/             # Custom hooks (useScrollReveal, use-mobile…)
+├── i18n/              # Traducciones (ES · EN · DE · FR · ZH)
+├── pages/             # Páginas (Index, NotFound)
+└── index.css          # Sistema de diseño (tokens HSL)
+```
+
+---
+
+## 🎨 Sistema de diseño
+
+La web utiliza un **sistema de tokens semánticos** definido en `src/index.css` y `tailwind.config.ts`:
+
+| Token | Uso |
+|---|---|
+| `--primary` | Azul corporativo (`220 72% 36%`) — botones principales y acentos |
+| `--secondary` | Naranja taxi (`34 92% 50%`) — precios destacados y CTAs |
+| `--background` | Crema cálido (`48 100% 97%`) — fondo principal |
+| `--card` | Blanco puro — tarjetas y superficies elevadas |
+
+> ✅ Modo claro forzado en toda la web para una experiencia consistente.
+
+---
+
+## 📬 Contacto
+
+<div align="center">
+
+| | |
+|---|---|
+| 📞 **Teléfono** | [+34 691 31 27 82](tel:+34691312782) |
+| 💬 **WhatsApp** | [Chatear ahora](https://wa.me/34691312782) |
+| 📧 **Email** | [Taxijerez24h@gmail.com](mailto:Taxijerez24h@gmail.com) |
+| 📍 **Ubicación** | Jerez de la Frontera, Cádiz · España |
+| 🕐 **Horario** | 24 horas · 7 días a la semana |
+
+</div>
+
+---
+
+<div align="center">
+
+### 🚖 *Taxi Jerez 24H — Donde quieras, cuando quieras*
+
+<sub>Imágenes de Jerez vía <a href="https://commons.wikimedia.org/wiki/Category:Jerez_de_la_Frontera">Wikimedia Commons</a> · Hecho con ❤️ en Andalucía</sub>
+
+<br>
+
+[![Lovable](https://img.shields.io/badge/Editar_en-Lovable-FF6B9D?style=for-the-badge)](https://lovable.dev)
+
+</div>
