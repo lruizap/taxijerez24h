@@ -44,7 +44,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-heading font-semibold text-foreground">{t("contact_label_email")}</p>
-                <a href="mailto:Taxijerez24h@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors break-all">Taxijerez24h@gmail.com</a>
+                <a href="mailto:frantrujillano@taxijerez24h.com" className="text-muted-foreground text-sm hover:text-primary transition-colors break-all">Taxijerez24h@gmail.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
