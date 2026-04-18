@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "https://taxijerez24h.com/:path*",
+      "destination": "https://www.taxijerez24h.com/:path*",
+      "permanent": true
+    }
+  ]
+}
