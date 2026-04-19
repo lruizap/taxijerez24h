@@ -5,11 +5,11 @@ import { Menu, X, Globe } from "lucide-react";
 const langs: Lang[] = ["es", "en", "de", "fr", "zh"];
 
 const langFlags: Record<Lang, string> = {
-  es: "🇪🇸",
-  en: "🇬🇧",
-  de: "🇩🇪",
-  fr: "🇫🇷",
-  zh: "🇨🇳",
+  es: "/flags/es.svg",
+  en: "/flags/en.svg",
+  de: "/flags/de.svg",
+  fr: "/flags/fr.svg",
+  zh: "/flags/zh.svg",
 };
 
 const Navbar = () => {
