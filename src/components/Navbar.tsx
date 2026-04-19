@@ -5,11 +5,11 @@ import { Menu, X, Globe } from "lucide-react";
 const langs: Lang[] = ["es", "en", "de", "fr", "zh"];
 
 const langFlags: Record<Lang, string> = {
-  es: "🇪🇸",
-  en: "🇬🇧",
-  de: "🇩🇪",
-  fr: "🇫🇷",
-  zh: "🇨🇳",
+  es: "/flags/es.svg",
+  en: "/flags/en.svg",
+  de: "/flags/de.svg",
+  fr: "/flags/fr.svg",
+  zh: "/flags/zh.svg",
 };
 
 const Navbar = () => {
@@ -93,7 +93,7 @@ const Navbar = () => {
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-muted/60 hover:bg-muted text-sm font-medium text-foreground/80 hover:text-primary transition-all"
             >
-              <span className="text-base leading-none">{langFlags[lang]}</span>
+              <img src={langFlags[lang]} alt={langNames[lang]} className="w-5 h-auto rounded-sm" />
               <span className="text-xs uppercase">{lang}</span>
             </button>
             {langOpen && (
@@ -109,7 +109,7 @@ const Navbar = () => {
                       l === lang ? "text-primary font-semibold" : "text-foreground/80"
                     }`}
                   >
-                    <span className="text-base leading-none">{langFlags[l]}</span>
+                    <img src={langFlags[l]} alt={langNames[l]} className="w-5 h-auto rounded-sm" />
                     <span>{langNames[l]}</span>
                   </button>
                 ))}
@@ -125,7 +125,7 @@ const Navbar = () => {
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 px-2.5 py-2 rounded-full hover:bg-muted text-foreground/80 transition-colors"
             >
-              <span className="text-lg leading-none">{langFlags[lang]}</span>
+              <img src={langFlags[lang]} alt={langNames[lang]} className="w-6 h-auto rounded-sm" />
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-2 bg-card rounded-xl shadow-xl border py-1.5 min-w-[160px] z-50 animate-in fade-in slide-in-from-top-2 duration-200">
@@ -140,7 +140,7 @@ const Navbar = () => {
                       l === lang ? "text-primary font-semibold" : "text-foreground/80"
                     }`}
                   >
-                    <span className="text-base leading-none">{langFlags[l]}</span>
+                    <img src={langFlags[l]} alt={langNames[l]} className="w-5 h-auto rounded-sm" />
                     <span>{langNames[l]}</span>
                   </button>
                 ))}
