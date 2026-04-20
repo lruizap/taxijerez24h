@@ -21,6 +21,7 @@ const Footer = () => {
 
       <div className="relative z-10 container mx-auto px-4 py-14">
         <div className="grid md:grid-cols-3 gap-10 mb-10 text-center">
+          
           {/* Brand */}
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center gap-3 mb-4">
@@ -52,14 +53,24 @@ const Footer = () => {
               {t("nav_contact")}
             </h3>
             <ul className="space-y-3 text-sm inline-flex flex-col items-start">
+              
+              {/* TELÉFONOS */}
               <li>
-                <a href="tel:+34691312782" className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group">
+                <a
+                  href="tel:+34691312782"
+                  className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group"
+                >
                   <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                     <Phone className="w-4 h-4" />
                   </span>
-                  +34 691 31 27 82
+
+                  <span className="flex flex-col leading-tight">
+                    <span>+34 691 31 27 82</span>
+                    <span>+34 666 99 04 24</span>
+                  </span>
                 </a>
               </li>
+
               <li>
                 <a href="mailto:frantrujillano@taxijerez24h.com" className="flex items-center gap-3 text-primary-foreground/85 hover:text-secondary transition-colors group break-all">
                   <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors flex-shrink-0">
@@ -68,12 +79,14 @@ const Footer = () => {
                   frantrujillano@taxijerez24h.com
                 </a>
               </li>
+
               <li className="flex items-center gap-3 text-primary-foreground/85">
                 <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-4 h-4" />
                 </span>
                 Jerez de la Frontera, Cádiz
               </li>
+
               <li className="flex items-center gap-3 text-primary-foreground/85">
                 <span className="w-9 h-9 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
                   <Clock className="w-4 h-4" />
