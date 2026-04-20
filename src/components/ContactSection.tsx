@@ -91,18 +91,30 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="font-heading font-semibold text-foreground">{t("contact_label_phone")}</p>
-                <a href="tel:+34691312782" className="text-muted-foreground text-sm hover:text-primary transition-colors">+34 691 31 27 82</a>
+                <a
+                  href="tel:+34691312782"
+                  className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                >
+                  <span className="flex flex-col leading-tight">
+                    <span>+34 691 31 27 82</span>
+                    <span>+34 666 99 04 24</span>
+                  </span>
+                </a>
               </div>
             </div>
+
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <Mail className="w-5 h-5 text-primary" />
               </div>
               <div>
                 <p className="font-heading font-semibold text-foreground">{t("contact_label_email")}</p>
-                <a href="mailto:frantrujillano@taxijerez24h.com" className="text-muted-foreground text-sm hover:text-primary transition-colors break-all">frantrujillano@taxijerez24h.com</a>
+                <a href="mailto:frantrujillano@taxijerez24h.com" className="text-muted-foreground text-sm hover:text-primary transition-colors break-all">
+                  frantrujillano@taxijerez24h.com
+                </a>
               </div>
             </div>
+
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-5 h-5 text-primary" />
