@@ -1,7 +1,13 @@
 {
   "redirects": [
     {
-      "source": "https://taxijerez24h.com/:path*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "taxijerez24h.com"
+        }
+      ],
       "destination": "https://www.taxijerez24h.com/:path*",
       "permanent": true
     }
