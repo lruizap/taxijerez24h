@@ -58,7 +58,19 @@ const ContactSection = () => {
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
 
-      toast.success(t("contact_success") || "¡Reserva enviada! Te contactaremos pronto.");
+      toast.success(
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+            <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div className="text-left">
+            <p className="font-semibold text-foreground">¡Reserva enviada!</p>
+            <p className="text-sm text-muted-foreground">Te contactaremos pronto para confirmar.</p>
+          </div>
+        </div>
+      );
       form.reset();
     } catch (err) {
       console.error("send-booking-email failed", err);
