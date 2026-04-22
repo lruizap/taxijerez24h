@@ -1,7 +1,7 @@
 import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const TO_EMAIL = "frantrujillano@taxijerez24h.com";
+const FROM_EMAIL = "Taxi Jerez 24h info@send.taxijerez24h.com";
 const FROM_EMAIL = "Taxi Jerez 24h <onboarding@resend.dev>";
 
 interface BookingPayload {
