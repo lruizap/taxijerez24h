@@ -21,7 +21,9 @@ const bookingSchema = z.object({
   destination: z.string().trim().min(1, "Destino requerido").max(200),
   passengers: z.string().min(1, "Pasajeros requeridos"),
   vehicle: z.string().min(1, "Vehículo requerido"),
+  luggage: z.string().trim().max(500).optional().or(z.literal("")),
   message: z.string().trim().max(2000).optional().or(z.literal("")),
+  language: z.string().optional(),
 });
 
 const ContactSection = () => {
@@ -37,6 +39,7 @@ const ContactSection = () => {
 
     const form = e.currentTarget;
     const fd = new FormData(form);
+
     const payload = {
       name: String(fd.get("name") || ""),
       phone: String(fd.get("phone") || ""),
@@ -46,6 +49,7 @@ const ContactSection = () => {
       destination: String(fd.get("destination") || ""),
       passengers: String(fd.get("passengers") || ""),
       vehicle: String(fd.get("vehicle") || ""),
+      luggage: String(fd.get("luggage") || ""),
       message: String(fd.get("message") || ""),
       language: lang,
     };
@@ -57,6 +61,7 @@ const ContactSection = () => {
     }
 
     setLoading(true);
+
     try {
       const { data, error } = await supabase.functions.invoke(
         "send-booking-email",
@@ -64,6 +69,7 @@ const ContactSection = () => {
           body: parsed.data,
         },
       );
+
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
 
@@ -92,6 +98,7 @@ const ContactSection = () => {
           </div>
         </div>,
       );
+
       form.reset();
     } catch (err) {
       console.error("send-booking-email failed", err);
@@ -120,7 +127,6 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-          {/* Info */}
           <div ref={infoRef} className="reveal-left space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -174,7 +180,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Form */}
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -252,6 +257,15 @@ const ContactSection = () => {
                 <option value="adapted">{t("contact_vehicle_adapted")}</option>
               </select>
             </div>
+
+            <textarea
+              name="luggage"
+              rows={3}
+              maxLength={500}
+              placeholder="Describe los bultos que llevas: número de maletas, tamaño, carrito, cajas, equipaje especial..."
+              className={inputClass}
+            />
+
             <textarea
               name="message"
               rows={3}
@@ -259,6 +273,7 @@ const ContactSection = () => {
               placeholder={t("contact_message")}
               className={inputClass}
             />
+
             <button
               type="submit"
               disabled={loading}

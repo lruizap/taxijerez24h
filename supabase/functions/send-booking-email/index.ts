@@ -1,7 +1,7 @@
 import { corsHeaders } from "../_shared/cors.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const FROM_EMAIL = "Taxi Jerez 24h <frantrujillano@taxijerez24h.com>";
+const FROM_EMAIL = "Taxi Jerez 24h <info@taxijerez24h.com>";
 const TO_EMAIL = "frantrujillano@taxijerez24h.com";
 
 interface BookingPayload {
@@ -13,6 +13,7 @@ interface BookingPayload {
   destination: string;
   passengers: string;
   vehicle: string;
+  luggage?: string;
   message?: string;
   language?: string;
 }
@@ -25,9 +26,8 @@ const escapeHtml = (s: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
-const isValidEmail = (email: string) => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-};
+const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
 const validate = (
   b: unknown,
@@ -66,6 +66,14 @@ const validate = (
       !isValidEmail(body.email))
   ) {
     return { ok: false, error: "Invalid email" };
+  }
+
+  if (
+    body.luggage !== undefined &&
+    body.luggage !== "" &&
+    (typeof body.luggage !== "string" || body.luggage.length > 500)
+  ) {
+    return { ok: false, error: "Invalid luggage" };
   }
 
   if (
@@ -131,6 +139,7 @@ Deno.serve(async (req) => {
       destination: escapeHtml(d.destination),
       passengers: escapeHtml(d.passengers),
       vehicle: escapeHtml(d.vehicle),
+      luggage: d.luggage ? escapeHtml(d.luggage) : "—",
       message: d.message ? escapeHtml(d.message) : "—",
       language: d.language ? escapeHtml(d.language) : "es",
     };
@@ -140,20 +149,58 @@ Deno.serve(async (req) => {
         <div style="background:#1e40af;color:#fff;padding:24px;border-radius:8px 8px 0 0">
           <h1 style="margin:0;font-size:22px">🚕 Nueva reserva — Taxi Jerez 24h</h1>
         </div>
+
         <div style="border:1px solid #e5e7eb;border-top:0;padding:24px;border-radius:0 0 8px 8px">
           <table style="width:100%;border-collapse:collapse;font-size:14px">
-            <tr><td style="padding:8px 0;color:#6b7280;width:140px"><strong>Nombre</strong></td><td>${safe.name}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Teléfono</strong></td><td><a href="tel:${safe.phone}">${safe.phone}</a></td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Email</strong></td><td>${safe.email}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Fecha y hora</strong></td><td>${safe.datetime}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Origen</strong></td><td>${safe.origin}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Destino</strong></td><td>${safe.destination}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Pasajeros</strong></td><td>${safe.passengers}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Vehículo</strong></td><td>${safe.vehicle}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280"><strong>Idioma web</strong></td><td>${safe.language}</td></tr>
-            <tr><td style="padding:8px 0;color:#6b7280;vertical-align:top"><strong>Mensaje</strong></td><td style="white-space:pre-wrap">${safe.message}</td></tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;width:140px"><strong>Nombre</strong></td>
+              <td>${safe.name}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Teléfono</strong></td>
+              <td><a href="tel:${safe.phone}">${safe.phone}</a></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Email</strong></td>
+              <td>${safe.email}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Fecha y hora</strong></td>
+              <td>${safe.datetime}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Origen</strong></td>
+              <td>${safe.origin}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Destino</strong></td>
+              <td>${safe.destination}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Pasajeros</strong></td>
+              <td>${safe.passengers}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Vehículo</strong></td>
+              <td>${safe.vehicle}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;vertical-align:top"><strong>Bultos</strong></td>
+              <td style="white-space:pre-wrap">${safe.luggage}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;vertical-align:top"><strong>Mensaje</strong></td>
+              <td style="white-space:pre-wrap">${safe.message}</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;color:#6b7280"><strong>Idioma web</strong></td>
+              <td>${safe.language}</td>
+            </tr>
           </table>
-          <p style="margin-top:24px;font-size:12px;color:#9ca3af">Enviado desde el formulario web de taxijerez24h.com</p>
+
+          <p style="margin-top:24px;font-size:12px;color:#9ca3af">
+            Enviado desde el formulario web de taxijerez24h.com
+          </p>
         </div>
       </div>
     `;
