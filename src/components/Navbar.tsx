@@ -69,8 +69,12 @@ const Navbar = () => {
             />
           </div>
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-heading font-bold text-sm text-primary">Taxi Jerez 24H</span>
-            <span className="text-[10px] text-muted-foreground -mt-0.5">Jerez de la Frontera · 24 horas</span>
+            <span className="font-heading font-bold text-sm text-primary">
+              Taxi Jerez 24H
+            </span>
+            <span className="text-[10px] text-muted-foreground -mt-0.5">
+              Jerez de la Frontera · 24 horas
+            </span>
           </div>
         </a>
 
@@ -93,7 +97,11 @@ const Navbar = () => {
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-muted/60 hover:bg-muted text-sm font-medium text-foreground/80 hover:text-primary transition-all"
             >
-              <img src={langFlags[lang]} alt={langNames[lang]} className="w-5 h-auto rounded-sm" />
+              <img
+                src={langFlags[lang]}
+                alt={langNames[lang]}
+                className="w-5 h-auto rounded-sm"
+              />
               <span className="text-xs uppercase">{lang}</span>
             </button>
             {langOpen && (
@@ -106,10 +114,16 @@ const Navbar = () => {
                       setLangOpen(false);
                     }}
                     className={`flex items-center gap-2.5 w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors ${
-                      l === lang ? "text-primary font-semibold" : "text-foreground/80"
+                      l === lang
+                        ? "text-primary font-semibold"
+                        : "text-foreground/80"
                     }`}
                   >
-                    <img src={langFlags[l]} alt={langNames[l]} className="w-5 h-auto rounded-sm" />
+                    <img
+                      src={langFlags[l]}
+                      alt={langNames[l]}
+                      className="w-5 h-auto rounded-sm"
+                    />
                     <span>{langNames[l]}</span>
                   </button>
                 ))}
@@ -125,7 +139,11 @@ const Navbar = () => {
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 px-2.5 py-2 rounded-full hover:bg-muted text-foreground/80 transition-colors"
             >
-              <img src={langFlags[lang]} alt={langNames[lang]} className="w-6 h-auto rounded-sm" />
+              <img
+                src={langFlags[lang]}
+                alt={langNames[lang]}
+                className="w-6 h-auto rounded-sm"
+              />
             </button>
             {langOpen && (
               <div className="absolute right-0 top-full mt-2 bg-card rounded-xl shadow-xl border py-1.5 min-w-[160px] z-50 animate-in fade-in slide-in-from-top-2 duration-200">
@@ -137,10 +155,16 @@ const Navbar = () => {
                       setLangOpen(false);
                     }}
                     className={`flex items-center gap-2.5 w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors ${
-                      l === lang ? "text-primary font-semibold" : "text-foreground/80"
+                      l === lang
+                        ? "text-primary font-semibold"
+                        : "text-foreground/80"
                     }`}
                   >
-                    <img src={langFlags[l]} alt={langNames[l]} className="w-5 h-auto rounded-sm" />
+                    <img
+                      src={langFlags[l]}
+                      alt={langNames[l]}
+                      className="w-5 h-auto rounded-sm"
+                    />
                     <span>{langNames[l]}</span>
                   </button>
                 ))}

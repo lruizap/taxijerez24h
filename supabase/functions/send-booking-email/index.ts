@@ -1,8 +1,8 @@
-import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
+import { corsHeaders } from "../_shared/cors.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const FROM_EMAIL = "Taxi Jerez 24h info@send.taxijerez24h.com";
-const FROM_EMAIL = "Taxi Jerez 24h <onboarding@resend.dev>";
+const FROM_EMAIL = "Taxi Jerez 24h <frantrujillano@taxijerez24h.com>";
+const TO_EMAIL = "frantrujillano@taxijerez24h.com";
 
 interface BookingPayload {
   name: string;
@@ -18,42 +18,110 @@ interface BookingPayload {
 }
 
 const escapeHtml = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
-const validate = (b: any): { ok: true; data: BookingPayload } | { ok: false; error: string } => {
-  if (!b || typeof b !== "object") return { ok: false, error: "Invalid body" };
-  const required = ["name", "phone", "datetime", "origin", "destination", "passengers", "vehicle"];
-  for (const f of required) {
-    if (typeof b[f] !== "string" || b[f].trim().length === 0) return { ok: false, error: `Missing field: ${f}` };
-    if (b[f].length > 500) return { ok: false, error: `Field too long: ${f}` };
+const isValidEmail = (email: string) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+const validate = (
+  b: unknown,
+): { ok: true; data: BookingPayload } | { ok: false; error: string } => {
+  if (!b || typeof b !== "object") {
+    return { ok: false, error: "Invalid body" };
   }
-  if (b.email && (typeof b.email !== "string" || b.email.length > 255)) return { ok: false, error: "Invalid email" };
-  if (b.message && (typeof b.message !== "string" || b.message.length > 2000)) return { ok: false, error: "Message too long" };
-  return { ok: true, data: b as BookingPayload };
+
+  const body = b as Record<string, unknown>;
+
+  const required = [
+    "name",
+    "phone",
+    "datetime",
+    "origin",
+    "destination",
+    "passengers",
+    "vehicle",
+  ];
+
+  for (const field of required) {
+    const value = body[field];
+    if (typeof value !== "string" || value.trim().length === 0) {
+      return { ok: false, error: `Missing field: ${field}` };
+    }
+    if (value.length > 500) {
+      return { ok: false, error: `Field too long: ${field}` };
+    }
+  }
+
+  if (
+    body.email !== undefined &&
+    body.email !== "" &&
+    (typeof body.email !== "string" ||
+      body.email.length > 255 ||
+      !isValidEmail(body.email))
+  ) {
+    return { ok: false, error: "Invalid email" };
+  }
+
+  if (
+    body.message !== undefined &&
+    body.message !== "" &&
+    (typeof body.message !== "string" || body.message.length > 2000)
+  ) {
+    return { ok: false, error: "Message too long" };
+  }
+
+  if (
+    body.language !== undefined &&
+    body.language !== "" &&
+    typeof body.language !== "string"
+  ) {
+    return { ok: false, error: "Invalid language" };
+  }
+
+  return { ok: true, data: body as unknown as BookingPayload };
 };
 
 Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
 
   try {
     if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not set");
-      return new Response(JSON.stringify({ error: "Email service not configured" }), {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({ error: "Email service not configured" }),
+        {
+          status: 500,
+          headers: {
+            ...corsHeaders,
+            "Content-Type": "application/json",
+          },
+        },
+      );
     }
 
     const body = await req.json();
     const result = validate(body);
+
     if (!result.ok) {
       return new Response(JSON.stringify({ error: result.error }), {
         status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
+        headers: {
+          ...corsHeaders,
+          "Content-Type": "application/json",
+        },
       });
     }
 
     const d = result.data;
+
     const safe = {
       name: escapeHtml(d.name),
       phone: escapeHtml(d.phone),
@@ -90,40 +158,68 @@ Deno.serve(async (req) => {
       </div>
     `;
 
+    const resendPayload: Record<string, unknown> = {
+      from: FROM_EMAIL,
+      to: [TO_EMAIL],
+      subject: `🚕 Nueva reserva de ${d.name} — ${d.datetime}`,
+      html,
+    };
+
+    if (d.email && isValidEmail(d.email)) {
+      resendPayload.reply_to = d.email;
+    }
+
     const resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
-      body: JSON.stringify({
-        from: FROM_EMAIL,
-        to: [TO_EMAIL],
-        reply_to: d.email || undefined,
-        subject: `🚕 Nueva reserva de ${d.name} — ${d.datetime}`,
-        html,
-      }),
+      body: JSON.stringify(resendPayload),
     });
 
     const resendData = await resendRes.json();
+
     if (!resendRes.ok) {
       console.error("Resend error:", resendRes.status, resendData);
-      return new Response(JSON.stringify({ error: "Failed to send email", detail: resendData }), {
-        status: 502,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+      return new Response(
+        JSON.stringify({
+          error: "Failed to send email",
+          detail: resendData,
+        }),
+        {
+          status: 502,
+          headers: {
+            ...corsHeaders,
+            "Content-Type": "application/json",
+          },
+        },
+      );
     }
 
-    return new Response(JSON.stringify({ success: true, id: resendData.id }), {
-      status: 200,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        success: true,
+        id: resendData.id,
+      }),
+      {
+        status: 200,
+        headers: {
+          ...corsHeaders,
+          "Content-Type": "application/json",
+        },
+      },
+    );
   } catch (err) {
     console.error("send-booking-email error:", err);
     const msg = err instanceof Error ? err.message : "Unknown error";
+
     return new Response(JSON.stringify({ error: msg }), {
       status: 500,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json",
+      },
     });
   }
 });

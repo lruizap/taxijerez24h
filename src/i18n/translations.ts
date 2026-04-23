@@ -18,27 +18,36 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_contact: "Contacto",
     // Hero
     hero_title: "Tu Taxi de Confianza en Jerez",
-    hero_subtitle: "Servicio profesional de taxi 24 horas. Traslados al aeropuerto, interurbanos y adaptados. Viaja cómodo, seguro y a precio cerrado.",
+    hero_subtitle:
+      "Servicio profesional de taxi 24 horas. Traslados al aeropuerto, interurbanos y adaptados. Viaja cómodo, seguro y a precio cerrado.",
     hero_cta: "Reservar Ahora",
     hero_cta2: "Ver Tarifas",
     // Services
     services_title: "Nuestros Servicios",
-    services_subtitle: "Ofrecemos una amplia gama de servicios de transporte adaptados a tus necesidades",
+    services_subtitle:
+      "Ofrecemos una amplia gama de servicios de transporte adaptados a tus necesidades",
     srv_airport: "Traslados al Aeropuerto",
-    srv_airport_desc: "Recogida y traslado al aeropuerto de Jerez con máxima puntualidad. También aeropuertos de Sevilla y Málaga.",
+    srv_airport_desc:
+      "Recogida y traslado al aeropuerto de Jerez con máxima puntualidad. También aeropuertos de Sevilla y Málaga.",
     srv_city: "Servicios en Jerez",
-    srv_city_desc: "Desplazamientos dentro de Jerez de la Frontera. Servicio rápido, cómodo y al mejor precio.",
+    srv_city_desc:
+      "Desplazamientos dentro de Jerez de la Frontera. Servicio rápido, cómodo y al mejor precio.",
     srv_intercity: "Interurbanos",
-    srv_intercity_desc: "De Jerez a cualquier parte: Cádiz, Sevilla, Málaga, Tarifa... ¡Incluso a París si hace falta!",
+    srv_intercity_desc:
+      "De Jerez a cualquier parte: Cádiz, Sevilla, Málaga, Tarifa... ¡Incluso a París si hace falta!",
     srv_adapted: "Taxi Adaptado",
-    srv_adapted_desc: "Vehículos adaptados para personas con movilidad reducida. Accesibilidad y confort garantizados.",
+    srv_adapted_desc:
+      "Vehículos adaptados para personas con movilidad reducida. Accesibilidad y confort garantizados.",
     srv_7seats: "7 Plazas",
-    srv_7seats_desc: "Taxi monovolumen de 6 plazas ideal para familias y grupos medianos.",
+    srv_7seats_desc:
+      "Taxi monovolumen de 6 plazas ideal para familias y grupos medianos.",
     srv_9seats: "9 Plazas",
-    srv_9seats_desc: "Vehículos de 8 plazas para grupos grandes, eventos y excursiones.",
+    srv_9seats_desc:
+      "Vehículos de 8 plazas para grupos grandes, eventos y excursiones.",
     // Fleet
     fleet_title: "Nuestra Flota",
-    fleet_subtitle: "Vehículos modernos y bien mantenidos para tu máximo confort",
+    fleet_subtitle:
+      "Vehículos modernos y bien mantenidos para tu máximo confort",
     fleet_normal: "Taxi Estándar",
     fleet_normal_desc: "Hasta 4 pasajeros",
     fleet_7: "7 Plazas",
@@ -49,7 +58,8 @@ const translations: Record<Lang, Record<string, string>> = {
     fleet_adapted_desc: "Accesibilidad total",
     // Prices
     prices_title: "Tarifas",
-    prices_subtitle: "Precios cerrados y sin sorpresas. Consulta las principales tarifas de nuestros servicios.",
+    prices_subtitle:
+      "Precios cerrados y sin sorpresas. Consulta las principales tarifas de nuestros servicios.",
     prices_route: "Trayecto",
     prices_price: "Precio",
     prices_not_listed: "¿No está tu destino? ¡Consúltanos!",
@@ -60,13 +70,15 @@ const translations: Record<Lang, Record<string, string>> = {
     // About Jerez
     about_title: "Conoce Jerez",
     about_subtitle: "La cuna del flamenco, el caballo y el vino",
-    about_text: "Jerez de la Frontera es una ciudad llena de historia, cultura y tradición. Desde sus emblemáticas plazas hasta sus famosas bodegas, te llevamos cómodamente a cualquier rincón de la ciudad y sus alrededores.",
+    about_text:
+      "Jerez de la Frontera es una ciudad llena de historia, cultura y tradición. Desde sus emblemáticas plazas hasta sus famosas bodegas, te llevamos cómodamente a cualquier rincón de la ciudad y sus alrededores.",
     about_badge_1: "Patrimonio histórico",
     about_badge_2: "Bodegas centenarias",
     about_badge_3: "Cultura ecuestre",
     // Contact
     contact_title: "Reserva tu Taxi",
-    contact_subtitle: "Rellena el formulario y te confirmaremos tu reserva lo antes posible",
+    contact_subtitle:
+      "Rellena el formulario y te confirmaremos tu reserva lo antes posible",
     contact_name: "Nombre",
     contact_phone: "Teléfono",
     contact_email: "Email",
@@ -89,15 +101,18 @@ const translations: Record<Lang, Record<string, string>> = {
     footer_available: "Disponible 24 horas, 7 días a la semana",
     // Disclaimer & Calculator
     prices_disclaimer_title: "Precios orientativos",
-    prices_disclaimer: "Los precios mostrados son aproximados y pueden variar según el tráfico, horario nocturno, festivos, equipaje, número de pasajeros u otras circunstancias. Confírmanos siempre el precio antes de la reserva.",
+    prices_disclaimer:
+      "Los precios mostrados son aproximados y pueden variar según el tráfico, horario nocturno, festivos, equipaje, número de pasajeros u otras circunstancias. Confírmanos siempre el precio antes de la reserva.",
     calc_title: "Calculadora de Precio",
-    calc_subtitle: "Estima el coste de tu trayecto introduciendo los kilómetros (solo ida).",
+    calc_subtitle:
+      "Estima el coste de tu trayecto introduciendo los kilómetros (solo ida).",
     calc_label_km: "Kilómetros (solo ida)",
     calc_placeholder: "Ej: 25",
     calc_button: "Calcular",
     calc_result: "Precio estimado",
     calc_formula: "Fórmula: (km ida × 2) × 0,82 €",
-    calc_note: "Precio aproximado. Puede variar según las condiciones del servicio.",
+    calc_note:
+      "Precio aproximado. Puede variar según las condiciones del servicio.",
     // WhatsApp
     whatsapp_tooltip: "Contactar por WhatsApp",
   },
@@ -108,25 +123,33 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_prices: "Prices",
     nav_contact: "Contact",
     hero_title: "Your Trusted Taxi in Jerez",
-    hero_subtitle: "Professional 24h taxi service. Airport transfers, intercity and adapted vehicles. Travel comfortably, safely and at fixed prices.",
+    hero_subtitle:
+      "Professional 24h taxi service. Airport transfers, intercity and adapted vehicles. Travel comfortably, safely and at fixed prices.",
     hero_cta: "Book Now",
     hero_cta2: "View Prices",
     services_title: "Our Services",
-    services_subtitle: "We offer a wide range of transport services tailored to your needs",
+    services_subtitle:
+      "We offer a wide range of transport services tailored to your needs",
     srv_airport: "Airport Transfers",
-    srv_airport_desc: "Pickup and transfer to Jerez airport with maximum punctuality. Also Seville and Malaga airports.",
+    srv_airport_desc:
+      "Pickup and transfer to Jerez airport with maximum punctuality. Also Seville and Malaga airports.",
     srv_city: "Services in Jerez",
-    srv_city_desc: "Rides within Jerez de la Frontera. Fast, comfortable and at the best price.",
+    srv_city_desc:
+      "Rides within Jerez de la Frontera. Fast, comfortable and at the best price.",
     srv_intercity: "Intercity",
-    srv_intercity_desc: "From Jerez anywhere: Cadiz, Seville, Malaga, Tarifa... Even Paris if needed!",
+    srv_intercity_desc:
+      "From Jerez anywhere: Cadiz, Seville, Malaga, Tarifa... Even Paris if needed!",
     srv_adapted: "Adapted Taxi",
-    srv_adapted_desc: "Vehicles adapted for people with reduced mobility. Accessibility and comfort guaranteed.",
+    srv_adapted_desc:
+      "Vehicles adapted for people with reduced mobility. Accessibility and comfort guaranteed.",
     srv_7seats: "7 Seats",
     srv_7seats_desc: "6-seater minivan ideal for families and medium groups.",
     srv_9seats: "9 Seats",
-    srv_9seats_desc: "8-seater vehicles for large groups, events and excursions.",
+    srv_9seats_desc:
+      "8-seater vehicles for large groups, events and excursions.",
     fleet_title: "Our Fleet",
-    fleet_subtitle: "Modern and well-maintained vehicles for your maximum comfort",
+    fleet_subtitle:
+      "Modern and well-maintained vehicles for your maximum comfort",
     fleet_normal: "Standard Taxi",
     fleet_normal_desc: "Up to 4 passengers",
     fleet_7: "7 Seats",
@@ -136,7 +159,8 @@ const translations: Record<Lang, Record<string, string>> = {
     fleet_adapted: "Adapted",
     fleet_adapted_desc: "Full accessibility",
     prices_title: "Prices",
-    prices_subtitle: "Fixed prices with no surprises. Check the main rates for our services.",
+    prices_subtitle:
+      "Fixed prices with no surprises. Check the main rates for our services.",
     prices_route: "Route",
     prices_price: "Price",
     prices_not_listed: "Don't see your destination? Ask us!",
@@ -146,12 +170,14 @@ const translations: Record<Lang, Record<string, string>> = {
     prices_no_results: "No destinations found",
     about_title: "Discover Jerez",
     about_subtitle: "The cradle of flamenco, horses and wine",
-    about_text: "Jerez de la Frontera is a city full of history, culture and tradition. From its iconic squares to its famous wineries, we'll take you comfortably to every corner of the city and its surroundings.",
+    about_text:
+      "Jerez de la Frontera is a city full of history, culture and tradition. From its iconic squares to its famous wineries, we'll take you comfortably to every corner of the city and its surroundings.",
     about_badge_1: "Historic heritage",
     about_badge_2: "Centuries-old wineries",
     about_badge_3: "Equestrian culture",
     contact_title: "Book Your Taxi",
-    contact_subtitle: "Fill in the form and we'll confirm your booking as soon as possible",
+    contact_subtitle:
+      "Fill in the form and we'll confirm your booking as soon as possible",
     contact_name: "Name",
     contact_phone: "Phone",
     contact_email: "Email",
@@ -172,9 +198,11 @@ const translations: Record<Lang, Record<string, string>> = {
     footer_rights: "All rights reserved.",
     footer_available: "Available 24 hours, 7 days a week",
     prices_disclaimer_title: "Estimated prices",
-    prices_disclaimer: "The prices shown are approximate and may vary depending on traffic, night hours, holidays, luggage, number of passengers or other circumstances. Always confirm the price before booking.",
+    prices_disclaimer:
+      "The prices shown are approximate and may vary depending on traffic, night hours, holidays, luggage, number of passengers or other circumstances. Always confirm the price before booking.",
     calc_title: "Price Calculator",
-    calc_subtitle: "Estimate the cost of your trip by entering the distance (one way).",
+    calc_subtitle:
+      "Estimate the cost of your trip by entering the distance (one way).",
     calc_label_km: "Kilometers (one way)",
     calc_placeholder: "E.g. 25",
     calc_button: "Calculate",
@@ -190,25 +218,34 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_prices: "Preise",
     nav_contact: "Kontakt",
     hero_title: "Ihr Vertrauens-Taxi in Jerez",
-    hero_subtitle: "Professioneller 24h-Taxiservice. Flughafentransfers, Überlandfahrten und angepasste Fahrzeuge. Reisen Sie bequem, sicher und zum Festpreis.",
+    hero_subtitle:
+      "Professioneller 24h-Taxiservice. Flughafentransfers, Überlandfahrten und angepasste Fahrzeuge. Reisen Sie bequem, sicher und zum Festpreis.",
     hero_cta: "Jetzt Buchen",
     hero_cta2: "Preise Ansehen",
     services_title: "Unsere Dienste",
-    services_subtitle: "Wir bieten eine breite Palette an Transportdiensten, die auf Ihre Bedürfnisse zugeschnitten sind",
+    services_subtitle:
+      "Wir bieten eine breite Palette an Transportdiensten, die auf Ihre Bedürfnisse zugeschnitten sind",
     srv_airport: "Flughafentransfers",
-    srv_airport_desc: "Abholung und Transfer zum Flughafen Jerez mit maximaler Pünktlichkeit. Auch Flughäfen Sevilla und Málaga.",
+    srv_airport_desc:
+      "Abholung und Transfer zum Flughafen Jerez mit maximaler Pünktlichkeit. Auch Flughäfen Sevilla und Málaga.",
     srv_city: "Dienste in Jerez",
-    srv_city_desc: "Fahrten innerhalb von Jerez de la Frontera. Schnell, komfortabel und zum besten Preis.",
+    srv_city_desc:
+      "Fahrten innerhalb von Jerez de la Frontera. Schnell, komfortabel und zum besten Preis.",
     srv_intercity: "Überlandfahrten",
-    srv_intercity_desc: "Von Jerez überall hin: Cádiz, Sevilla, Málaga, Tarifa... Sogar nach Paris!",
+    srv_intercity_desc:
+      "Von Jerez überall hin: Cádiz, Sevilla, Málaga, Tarifa... Sogar nach Paris!",
     srv_adapted: "Angepasstes Taxi",
-    srv_adapted_desc: "Fahrzeuge für Personen mit eingeschränkter Mobilität. Barrierefreiheit und Komfort garantiert.",
+    srv_adapted_desc:
+      "Fahrzeuge für Personen mit eingeschränkter Mobilität. Barrierefreiheit und Komfort garantiert.",
     srv_7seats: "7 Sitze",
-    srv_7seats_desc: "6-Sitzer Minivan ideal für Familien und mittlere Gruppen.",
+    srv_7seats_desc:
+      "6-Sitzer Minivan ideal für Familien und mittlere Gruppen.",
     srv_9seats: "9 Sitze",
-    srv_9seats_desc: "8-Sitzer Fahrzeuge für große Gruppen, Events und Ausflüge.",
+    srv_9seats_desc:
+      "8-Sitzer Fahrzeuge für große Gruppen, Events und Ausflüge.",
     fleet_title: "Unsere Flotte",
-    fleet_subtitle: "Moderne und gepflegte Fahrzeuge für Ihren maximalen Komfort",
+    fleet_subtitle:
+      "Moderne und gepflegte Fahrzeuge für Ihren maximalen Komfort",
     fleet_normal: "Standard-Taxi",
     fleet_normal_desc: "Bis zu 4 Fahrgäste",
     fleet_7: "7 Sitze",
@@ -218,7 +255,8 @@ const translations: Record<Lang, Record<string, string>> = {
     fleet_adapted: "Angepasst",
     fleet_adapted_desc: "Volle Barrierefreiheit",
     prices_title: "Preise",
-    prices_subtitle: "Festpreise ohne Überraschungen. Schauen Sie sich die wichtigsten Tarife unserer Dienste an.",
+    prices_subtitle:
+      "Festpreise ohne Überraschungen. Schauen Sie sich die wichtigsten Tarife unserer Dienste an.",
     prices_route: "Strecke",
     prices_price: "Preis",
     prices_not_listed: "Ihr Ziel nicht gefunden? Fragen Sie uns!",
@@ -228,12 +266,14 @@ const translations: Record<Lang, Record<string, string>> = {
     prices_no_results: "Keine Ziele gefunden",
     about_title: "Entdecken Sie Jerez",
     about_subtitle: "Die Wiege des Flamenco, der Pferde und des Weins",
-    about_text: "Jerez de la Frontera ist eine Stadt voller Geschichte, Kultur und Tradition. Von den emblematischen Plätzen bis zu den berühmten Weinkellereien bringen wir Sie bequem in jede Ecke der Stadt und ihrer Umgebung.",
+    about_text:
+      "Jerez de la Frontera ist eine Stadt voller Geschichte, Kultur und Tradition. Von den emblematischen Plätzen bis zu den berühmten Weinkellereien bringen wir Sie bequem in jede Ecke der Stadt und ihrer Umgebung.",
     about_badge_1: "Historisches Erbe",
     about_badge_2: "Jahrhundertealte Bodegas",
     about_badge_3: "Pferdekultur",
     contact_title: "Taxi Buchen",
-    contact_subtitle: "Füllen Sie das Formular aus und wir bestätigen Ihre Buchung so schnell wie möglich",
+    contact_subtitle:
+      "Füllen Sie das Formular aus und wir bestätigen Ihre Buchung so schnell wie möglich",
     contact_name: "Name",
     contact_phone: "Telefon",
     contact_email: "E-Mail",
@@ -254,9 +294,11 @@ const translations: Record<Lang, Record<string, string>> = {
     footer_rights: "Alle Rechte vorbehalten.",
     footer_available: "24 Stunden verfügbar, 7 Tage die Woche",
     prices_disclaimer_title: "Richtpreise",
-    prices_disclaimer: "Die angezeigten Preise sind Richtwerte und können je nach Verkehr, Nachtzeiten, Feiertagen, Gepäck, Anzahl der Fahrgäste oder anderen Umständen variieren. Bestätigen Sie den Preis immer vor der Buchung.",
+    prices_disclaimer:
+      "Die angezeigten Preise sind Richtwerte und können je nach Verkehr, Nachtzeiten, Feiertagen, Gepäck, Anzahl der Fahrgäste oder anderen Umständen variieren. Bestätigen Sie den Preis immer vor der Buchung.",
     calc_title: "Preisrechner",
-    calc_subtitle: "Schätzen Sie die Kosten Ihrer Fahrt durch Eingabe der Kilometer (einfache Strecke).",
+    calc_subtitle:
+      "Schätzen Sie die Kosten Ihrer Fahrt durch Eingabe der Kilometer (einfache Strecke).",
     calc_label_km: "Kilometer (einfach)",
     calc_placeholder: "Z.B. 25",
     calc_button: "Berechnen",
@@ -272,25 +314,34 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_prices: "Tarifs",
     nav_contact: "Contact",
     hero_title: "Votre Taxi de Confiance à Jerez",
-    hero_subtitle: "Service de taxi professionnel 24h. Transferts aéroport, interurbains et véhicules adaptés. Voyagez confortablement, en sécurité et à prix fixe.",
+    hero_subtitle:
+      "Service de taxi professionnel 24h. Transferts aéroport, interurbains et véhicules adaptés. Voyagez confortablement, en sécurité et à prix fixe.",
     hero_cta: "Réserver",
     hero_cta2: "Voir les Tarifs",
     services_title: "Nos Services",
-    services_subtitle: "Nous offrons une large gamme de services de transport adaptés à vos besoins",
+    services_subtitle:
+      "Nous offrons une large gamme de services de transport adaptés à vos besoins",
     srv_airport: "Transferts Aéroport",
-    srv_airport_desc: "Prise en charge et transfert à l'aéroport de Jerez avec ponctualité maximale. Aussi aéroports de Séville et Malaga.",
+    srv_airport_desc:
+      "Prise en charge et transfert à l'aéroport de Jerez avec ponctualité maximale. Aussi aéroports de Séville et Malaga.",
     srv_city: "Services à Jerez",
-    srv_city_desc: "Déplacements dans Jerez de la Frontera. Rapide, confortable et au meilleur prix.",
+    srv_city_desc:
+      "Déplacements dans Jerez de la Frontera. Rapide, confortable et au meilleur prix.",
     srv_intercity: "Interurbains",
-    srv_intercity_desc: "De Jerez partout: Cadix, Séville, Malaga, Tarifa... Même à Paris si nécessaire!",
+    srv_intercity_desc:
+      "De Jerez partout: Cadix, Séville, Malaga, Tarifa... Même à Paris si nécessaire!",
     srv_adapted: "Taxi Adapté",
-    srv_adapted_desc: "Véhicules adaptés pour personnes à mobilité réduite. Accessibilité et confort garantis.",
+    srv_adapted_desc:
+      "Véhicules adaptés pour personnes à mobilité réduite. Accessibilité et confort garantis.",
     srv_7seats: "7 Places",
-    srv_7seats_desc: "Monospace 6 places idéal pour familles et groupes moyens.",
+    srv_7seats_desc:
+      "Monospace 6 places idéal pour familles et groupes moyens.",
     srv_9seats: "9 Places",
-    srv_9seats_desc: "Véhicules 8 places pour grands groupes, événements et excursions.",
+    srv_9seats_desc:
+      "Véhicules 8 places pour grands groupes, événements et excursions.",
     fleet_title: "Notre Flotte",
-    fleet_subtitle: "Véhicules modernes et bien entretenus pour votre confort maximal",
+    fleet_subtitle:
+      "Véhicules modernes et bien entretenus pour votre confort maximal",
     fleet_normal: "Taxi Standard",
     fleet_normal_desc: "Jusqu'à 4 passagers",
     fleet_7: "7 Places",
@@ -300,7 +351,8 @@ const translations: Record<Lang, Record<string, string>> = {
     fleet_adapted: "Adapté",
     fleet_adapted_desc: "Accessibilité totale",
     prices_title: "Tarifs",
-    prices_subtitle: "Prix fixes et sans surprises. Consultez les principaux tarifs de nos services.",
+    prices_subtitle:
+      "Prix fixes et sans surprises. Consultez les principaux tarifs de nos services.",
     prices_route: "Trajet",
     prices_price: "Prix",
     prices_not_listed: "Votre destination n'est pas listée? Contactez-nous!",
@@ -310,12 +362,14 @@ const translations: Record<Lang, Record<string, string>> = {
     prices_no_results: "Aucune destination trouvée",
     about_title: "Découvrez Jerez",
     about_subtitle: "Le berceau du flamenco, du cheval et du vin",
-    about_text: "Jerez de la Frontera est une ville pleine d'histoire, de culture et de tradition. De ses places emblématiques à ses célèbres caves, nous vous emmenons confortablement dans chaque coin de la ville et ses environs.",
+    about_text:
+      "Jerez de la Frontera est une ville pleine d'histoire, de culture et de tradition. De ses places emblématiques à ses célèbres caves, nous vous emmenons confortablement dans chaque coin de la ville et ses environs.",
     about_badge_1: "Patrimoine historique",
     about_badge_2: "Caves centenaires",
     about_badge_3: "Culture équestre",
     contact_title: "Réservez Votre Taxi",
-    contact_subtitle: "Remplissez le formulaire et nous confirmerons votre réservation au plus vite",
+    contact_subtitle:
+      "Remplissez le formulaire et nous confirmerons votre réservation au plus vite",
     contact_name: "Nom",
     contact_phone: "Téléphone",
     contact_email: "Email",
@@ -336,15 +390,18 @@ const translations: Record<Lang, Record<string, string>> = {
     footer_rights: "Tous droits réservés.",
     footer_available: "Disponible 24h/24, 7j/7",
     prices_disclaimer_title: "Prix indicatifs",
-    prices_disclaimer: "Les prix indiqués sont approximatifs et peuvent varier selon le trafic, les horaires de nuit, les jours fériés, les bagages, le nombre de passagers ou d'autres circonstances. Confirmez toujours le prix avant la réservation.",
+    prices_disclaimer:
+      "Les prix indiqués sont approximatifs et peuvent varier selon le trafic, les horaires de nuit, les jours fériés, les bagages, le nombre de passagers ou d'autres circonstances. Confirmez toujours le prix avant la réservation.",
     calc_title: "Calculateur de Prix",
-    calc_subtitle: "Estimez le coût de votre trajet en saisissant les kilomètres (aller simple).",
+    calc_subtitle:
+      "Estimez le coût de votre trajet en saisissant les kilomètres (aller simple).",
     calc_label_km: "Kilomètres (aller simple)",
     calc_placeholder: "Ex: 25",
     calc_button: "Calculer",
     calc_result: "Prix estimé",
     calc_formula: "Formule: (km aller × 2) × 0,82 €",
-    calc_note: "Prix approximatif. Peut varier selon les conditions du service.",
+    calc_note:
+      "Prix approximatif. Peut varier selon les conditions du service.",
     whatsapp_tooltip: "Contacter par WhatsApp",
   },
   zh: {
@@ -354,7 +411,8 @@ const translations: Record<Lang, Record<string, string>> = {
     nav_prices: "价格",
     nav_contact: "联系",
     hero_title: "赫雷斯值得信赖的出租车",
-    hero_subtitle: "24小时专业出租车服务。机场接送、城际出行和无障碍车辆。舒适、安全、固定价格出行。",
+    hero_subtitle:
+      "24小时专业出租车服务。机场接送、城际出行和无障碍车辆。舒适、安全、固定价格出行。",
     hero_cta: "立即预订",
     hero_cta2: "查看价格",
     services_title: "我们的服务",
@@ -364,7 +422,8 @@ const translations: Record<Lang, Record<string, string>> = {
     srv_city: "赫雷斯市内服务",
     srv_city_desc: "赫雷斯市内出行。快速、舒适、最优价格。",
     srv_intercity: "城际出行",
-    srv_intercity_desc: "从赫雷斯到任何地方：加的斯、塞维利亚、马拉加、塔里法...甚至巴黎！",
+    srv_intercity_desc:
+      "从赫雷斯到任何地方：加的斯、塞维利亚、马拉加、塔里法...甚至巴黎！",
     srv_adapted: "无障碍出租车",
     srv_adapted_desc: "为行动不便人士提供的改装车辆。保证无障碍和舒适。",
     srv_7seats: "7座",
@@ -392,7 +451,8 @@ const translations: Record<Lang, Record<string, string>> = {
     prices_no_results: "未找到目的地",
     about_title: "了解赫雷斯",
     about_subtitle: "弗拉门戈、骏马与美酒之都",
-    about_text: "赫雷斯德拉弗龙特拉是一座充满历史、文化和传统的城市。从标志性的广场到著名的酒庄，我们舒适地带您到城市及周边的每一个角落。",
+    about_text:
+      "赫雷斯德拉弗龙特拉是一座充满历史、文化和传统的城市。从标志性的广场到著名的酒庄，我们舒适地带您到城市及周边的每一个角落。",
     about_badge_1: "历史遗产",
     about_badge_2: "百年酒庄",
     about_badge_3: "马术文化",
@@ -418,7 +478,8 @@ const translations: Record<Lang, Record<string, string>> = {
     footer_rights: "版权所有。",
     footer_available: "全天候24小时，每周7天",
     prices_disclaimer_title: "参考价格",
-    prices_disclaimer: "所示价格为参考价格，可能因交通、夜间时段、节假日、行李、乘客人数或其他情况而有所不同。预订前请务必确认价格。",
+    prices_disclaimer:
+      "所示价格为参考价格，可能因交通、夜间时段、节假日、行李、乘客人数或其他情况而有所不同。预订前请务必确认价格。",
     calc_title: "价格计算器",
     calc_subtitle: "输入公里数（单程）估算您的行程费用。",
     calc_label_km: "公里数（单程）",
