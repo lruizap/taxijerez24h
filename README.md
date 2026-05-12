@@ -160,6 +160,4 @@ La web utiliza un **sistema de tokens semánticos** definido en `src/index.css` 
 
 <br>
 
-[![Lovable](https://img.shields.io/badge/Editar_en-Lovable-FF6B9D?style=for-the-badge)](https://lovable.dev)
-
 </div>
